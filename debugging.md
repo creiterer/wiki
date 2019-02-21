@@ -2,6 +2,16 @@
 <!-- SUBTITLE: Tips & Tricks for Debugging -->
 
 # GDB
+## `~/.gdbinit`
+Put the following lines into the `.gdbinit` file in your home directory to
+* set the prompt to look like ![gdb prompt](/uploads/gdb-prompt.png "gdb prompt") and 
+* use intel assembly format
+by default.
+```text
+set prompt \001\033[1;31m\002(gdb)\001\033[0m\002\040
+set disassembly-flavor intel
+```
+
 ## Printing the Type of a Variable
 See https://stackoverflow.com/questions/8528979/how-to-determine-if-an-object-is-an-instance-of-certain-derived-c-class-from-a.
 
