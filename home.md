@@ -1,5 +1,5 @@
 <!-- TITLE: Home -->
-<!-- SUBTITLE: A quick summary of Home -->
+<!-- SUBTITLE: Home of crwiki -->
 
 # crwiki
 [![Glider](/uploads/glider.png "Glider")](http://www.catb.org/hacker-emblem/)
