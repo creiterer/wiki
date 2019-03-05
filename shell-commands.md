@@ -15,6 +15,20 @@
 | <code>du -hs ./* &#124; sort -h</code> | Show disk usage sorted. |
 | `rsync -av --delete /Source/ /Destination/` | Create a backup (see https://www.howtogeek.com/135533/how-to-use-rsync-to-backup-your-data-on-linux/). |
 | `netctl restart profile-name` | Restart the specified profile. |
+| `sort`                                            | In combination with `uniq -c` counts appearance. |
+| `grep -o`                                         | Shows only the matched string.                     |
+| `grep -n`                                         | Shows line numbers of the matches.                   |
+| `grep -c`                                         | Counts appearance of the string.               |
+| `grep -i`                                         | Match ignoring case.                           |
+| `sed -n '<firstline>,<lastline>p'`                | File returns the specified range of lines.     |
+| `let sum+=${value}`                               | For calculating in shell scripts.              |
+| `pfiles <PID>`                                    | List open files for *PID*.                       |
+| `lsof -p <PID>`                                   | List open files for *PID*.                       |
+| `pwdx <PID>`                                      | Get working dir of *PID*.                        |
+| `lsof -p <PID> | grep cwd`                        | Get working dir of *PID*.                        |
+| `readlink -e /proc/<PID>/cwd`                     | Get working dir of *PID*.                        |
+| `sudo tcpdump -s 0 -X 'tcp dst port 80' -i 'lo'`  | TCP dump of packets on port 80 of interface *lo*.  |
+| `sudo -u <username> bash -c 'command'`                | Execute a command as another user.             |
 
 ## Debian
 | Command | Description |
