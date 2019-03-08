@@ -1,5 +1,5 @@
-<!-- TITLE: Debugging -->
-<!-- SUBTITLE: Tips & Tricks for Debugging -->
+<!-- TITLE: GDB -->
+<!-- SUBTITLE: Tips & Tricks for GDB -->
 
 # GDB
 ## `~/.gdbinit`
