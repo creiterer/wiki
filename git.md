@@ -70,3 +70,18 @@ This shows what revision and which author has last modified each line of a certa
 * `git stash pop [stash@{n}]` to apply a stash and remove it from the stash list.
 * `git stash apply [stash@{n}]` to apply a stash and keep it in the stash cache.
 * `git stash list` to list the stash cache.
+
+## Recover Deleted Files
+Source: https://stackoverflow.com/questions/11956710/git-recover-deleted-file-where-no-commit-was-made-after-the-delete
+1. `git reset HEAD <file>`
+2. `git checkout <file>`
+
+## Switch to Another Tag
+Source: https://stackoverflow.com/questions/4330610/switch-to-another-git-tag
+* `git checkout tags/<tag>`
+* shorthand (only safe if the repository does not have a branch with the same name): `git checkout <tag>`
+
+## Checkout Specific Revision of a Specific File
+Source: https://stackoverflow.com/questions/215718/reset-or-revert-a-specific-file-to-a-specific-revision-using-git
+* revert to a certain commit (specified by `commit-hash`): `git checkout <commit-hash> -- <file1> <file2> ... <filen>`
+* revert to the commit before a certain commit (specified by `commit-hash`): `git checkout <commit-hash>~1 -- <file1> <file2> ... <filen>`
