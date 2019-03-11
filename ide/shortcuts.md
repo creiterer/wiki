@@ -2,10 +2,10 @@
 <!-- SUBTITLE: Useful shortcuts for different IDEs -->
 
 # Eclipse
-[Eclipse Shortcuts](ide/shortcuts/eclipse)
+[Eclipse Shortcuts](shortcuts/eclipse)
 
 # Visual Studio
-[Visual Studio Shortcuts](ide/shortcuts/visual-studio)
+[Visual Studio Shortcuts](shortcuts/visual-studio)
 
 # PyCharm
-[PyCharm Shortcuts](ide/shortcuts/pycharm)
+[PyCharm Shortcuts](shortcuts/pycharm)
