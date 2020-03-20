@@ -4,7 +4,7 @@
 # GDB
 ## `~/.gdbinit`
 Put the following lines into the `.gdbinit` file in your home directory to
-* set the prompt to look like ![gdb prompt](/uploads/gdb-prompt.png "gdb prompt") and 
+* set the prompt to look like ![gdb prompt](/uploads/gdb-prompt.png "gdb prompt") and
 * use intel assembly format
 by default.
 ```text
@@ -109,3 +109,10 @@ run <args>
 ```
 
 Afterwards, do the appropriate action so that the breakpoint is hit (e.g. send a request). This will trigger the `bt` command, which will print the inferior and thread number (e.g. Thread 4.3 "httpd" hit Breakpoint 1, ... -> inferior 4, thread 3). Now, switch to the appropriate thread (e.g. with `thread 4.3`) and do "normal" debugging.
+
+## Adding Additional Symbol/Debug Files
+See https://stackoverflow.com/questions/20380204/how-to-load-multiple-symbol-files-in-gdb.
+
+### Debug File Directories
+To set a whole directory containing symbol files: `set debug-file-directory <directory>`  
+To show what currently is set: `show debug-file-directory`
