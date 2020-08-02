@@ -9,6 +9,12 @@
 * running containers: `docker ps`
 * all containers: `docker ps -a`
 
+## Run an Image
+`docker run -it <image> <command>`
+
+For instance, start an image with a terminal (bash):
+`docker run -it <image> /bin/bash`
+
 ## Execute Command on Running Container
 `docker exec -it <container name> <command>`
 
