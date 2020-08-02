@@ -110,6 +110,13 @@ run <args>
 
 Afterwards, do the appropriate action so that the breakpoint is hit (e.g. send a request). This will trigger the `bt` command, which will print the inferior and thread number (e.g. Thread 4.3 "httpd" hit Breakpoint 1, ... -> inferior 4, thread 3). Now, switch to the appropriate thread (e.g. with `thread 4.3`) and do "normal" debugging.
 
+## Debugging Startup of a Child Process
+```text
+set follow-fork-mode child
+set detach-on-fork on
+b interesting-startup-code
+```
+
 ## Adding Additional Symbol/Debug Files
 See https://stackoverflow.com/questions/20380204/how-to-load-multiple-symbol-files-in-gdb.
 
