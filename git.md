@@ -108,3 +108,11 @@ See https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History
 1. `git rebase -i [--autosquash] <commit-hash>`, where `commit-hash` is the parent of the last commit you want to edit. For example,
 `git rebase -i HEAD~3` will edit the last three commits. To automatically squash `fixup` or `squash` commits, use the [--autosquash](https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt---autosquash) option.
 2. replace `pick` with `squash` to squash some commit into the previous one.
+
+## Renaming Branches
+Source: https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/
+1. `git checkout <old_name>`, to switch to the local branch `old_name` that should be renamed.
+2. `git branch -m <new_name>`, to rename the local branch to `new_name`.
+At this point, the local branch is renamed. If `old_name` is already pushed to the remote repository, the next two steps are necessary to also rename the remote branch.
+3. `git push origin -u <new_name>`, to push `new_name`.
+4. `git push origin --delete <old_name>`, to delete the `old_name` remote branch.
