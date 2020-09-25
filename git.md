@@ -117,3 +117,7 @@ Source: https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/
 At this point, the local branch is renamed. If `old_name` is already pushed to the remote repository, the next two steps are necessary to also rename the remote branch.
 3. `git push origin -u <new_name>`, to push `new_name`.
 4. `git push origin --delete <old_name>`, to delete the `old_name` remote branch.
+
+## Bypassing Commit Hooks
+Source: https://stackoverflow.com/questions/39963695/how-to-remove-git-hooks/40148602
+* Use the `--no-verify` option of the `git commit` command.
