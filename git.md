@@ -76,6 +76,7 @@ This shows what revision and which author has last modified each line of a certa
 * `git stash list` to list the stash cache.
 * `git stash show [stash@{n}]` to show the files that changed in the (most recent if no concrete stash is specified) stash.
 * `git stash show -p [stash@{n}]` to show the diff of a stash.
+* `git stash push [-m message] <path>` to stash a specific path.
 
 ## Recover Deleted Files
 Source: https://stackoverflow.com/questions/11956710/git-recover-deleted-file-where-no-commit-was-made-after-the-delete
