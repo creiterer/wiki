@@ -35,10 +35,12 @@ $ git commit -c ORIG_HEAD                                  # (5)
 * Diff of all changed files: `git diff`
 * Diff of a certain commit: `git diff <commit-hash>^ <commit-hash>`
 * Diff of staged files: `git diff --staged <filename>`
+* List only the changed files: `git diff --name-only [<commit-hash-1> <commit-hash-2>]`
 
 ## Revert Changes of Working Copy
-* Single file: `git checkout <filename>`
-* Whole directory: `git checkout .`
+* Single file: ~~`git checkout <filename>`~~ `git restore <filename>`
+* Whole directory: ~~`git checkout .`~~ `git restore .`
+* All working tree files: `git restore :/`
 
 ## Revert Changes Made to the Index
 *Warning: This will reset all of your unpushed commits to master*
@@ -66,8 +68,9 @@ This shows what revision and which author has last modified each line of a certa
 * Show *only remote* branches: `git branch -r`
 * Show *only local* branches: `git branch`
 
-## Rebase to up-to-date Master Branch
-* `git pull -r|--rebase origin master`
+## Rebasing
+* `git pull -r|--rebase origin master` to rebase onto up-to-date master.
+* `git pull -r . fix-branch` to rebase onto local branch `fix-branch`.
 
 ## Stashing
 * `git stash` to save local modifications to a new stash.
@@ -94,11 +97,15 @@ Source: https://stackoverflow.com/questions/215718/reset-or-revert-a-specific-fi
 * revert certain files to a certain commit (specified by `commit-hash`): `git checkout <commit-hash> -- <file1> <file2> ... <filen>`
 * revert to the commit before a certain commit (specified by `commit-hash`): `git checkout <commit-hash>~1 -- <file1> <file2> ... <filen>`
 
+## Checkout New Branch and Set Upstream
+* `git checkout -b <local-branch-name> -t origin/<remote-branch-name>`
+
 ## Revert Certain Commits
 * `git revert <commit-hash-1> <commit-hash-2> ... <commit-hash-n>`
 
 ## Push Certain Commits
-For example, pushing all but the last 5 commits to `origin` on branch `branch`: `git push origin HEAD~5:<branch>`
+* Pushing all but the last 5 commits to `origin` on branch `branch`: `git push origin HEAD~5:<branch>`
+* Pushing certain commit, specified by `commit-hash`, to `remote-name` on branch `remote-branch-name`: `git push <remote-name> <commit-hash>:<remote-branch-name>`
 
 ## Cherry-Pick a Commit
 Source: https://www.devroom.io/2010/06/10/cherry-picking-specific-commits-from-another-branch
@@ -109,6 +116,9 @@ See https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History
 1. `git rebase -i [--autosquash] <commit-hash>`, where `commit-hash` is the parent of the last commit you want to edit. For example,
 `git rebase -i HEAD~3` will edit the last three commits. To automatically squash `fixup` or `squash` commits, use the [--autosquash](https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt---autosquash) option.
 2. replace `pick` with `squash` to squash some commit into the previous one.
+
+## Changing a Commit Message
+* Edit the commit message of the last commit: `git commit --amend`
 
 ## Renaming Branches
 Source: https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/
@@ -121,3 +131,6 @@ At this point, the local branch is renamed. If `old_name` is already pushed to t
 ## Bypassing Commit Hooks
 Source: https://stackoverflow.com/questions/39963695/how-to-remove-git-hooks/40148602
 * Use the `--no-verify` option of the `git commit` command.
+
+## Reset Branches
+* `git reset --hard <remote-branch-name>` to reset a branch to a certain remote branch, e.g. `git reset --hard origin/master` to reset the current branch to `master`.
