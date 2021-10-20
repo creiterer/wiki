@@ -90,6 +90,10 @@ This works also with vectors.
 * `print sizeof(variable)`
 * `print sizeof(type)`
 
+## Printing Values in different Formats
+Source: https://sourceware.org/gdb/current/onlinedocs/gdb/Output-Formats.html
+* `p/x variable` to print the value of `variable` in hex format.
+
 ## Disable a Breakpoint
 `disable [breakpoints] [list...]`
 For example, `disable 1` to disable breakpoint 1.
