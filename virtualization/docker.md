@@ -15,6 +15,13 @@
 For instance, start an image with a terminal (bash):
 `docker run -it <image> /bin/bash`
 
+### Override Default Entrypoint
+Source: https://phoenixnap.com/kb/docker-run-override-entrypoint
+`docker run --entrypoint <new_command> <image> [optional:value]`
+
+For example:
+`docker run -it --entrypoint /bin/bash <image>`
+
 ## Execute Command on Running Container
 `docker exec -it <container name> <command>`
 
